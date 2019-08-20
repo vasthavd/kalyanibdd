@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  
+<h1><font style="text-align:center">Update Customer Information</font></h1>
+<body>
+<form #empForm=ngForm (ngSubmit)="update()">
+    
+        <div class="form-group row">
+          <label for="exampleInputuseremail" class="col-sm-1 col-form-label">Email Id</label>
+          <div class="col-7">
+          <input type="text" class="form-control"  aria-describedby="emailId" placeholder="Enter Email Id" name="emailId" id="emid" [(ngModel)]="emailId" #namecontrol="ngModel" required>
+          <span class="alert alert-danger" *ngIf="namecontrol.touched && namecontrol.invalid">Email Should Be Filled</span>
+        </div>
+      </div>
+        <div class="form-group row">
+          <label for="exampleInputuserfname" class="col-sm-1 col-form-label">First Name</label>
+          <div class="col-7">
+          <input type="text" onkeypress="return (event.charCode > 64 && 
+          event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" class="form-control"  aria-describedby="firstName" placeholder="Enter first name" name="fname" id="fn" [(ngModel)]="firstName" #fncontrol="ngModel" required>
+          <span class="alert alert-danger" *ngIf="fncontrol.touched && fncontrol.invalid">First Name Should Be Filled</span>
+        </div>
+      </div>
+        <div class="form-group row">
+          <label for="exampleInputuserlname"  class="col-sm-1 col-form-label">Last Name</label>
+          <div class="col-7">
+          <input type="text" onkeypress="return (event.charCode > 64 && 
+          event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" class="form-control"  aria-describedby="lastName" placeholder="Enter last name" name="lname" id="ln" [(ngModel)]="lastName" #lncontrol="ngModel" required>
+          <span class="alert alert-danger" *ngIf="lncontrol.touched && lncontrol.invalid">Last Name Should Be Filled</span>
+        </div>
+      </div>
+        <div class="form-group row">
+          <label for="exampleInputusermobile" class="col-sm-1 col-form-label">Mobile Number</label>
+          <div class="col-sm-7">
+          <input type="number" class="form-control"  aria-describedby="mobileNo" placeholder="Enter mobile number" name="mobileNo" id="mn" [(ngModel)]="mobileNo" #mncontrol="ngModel" required>
+          <span class="alert alert-danger" *ngIf="mncontrol.touched && mncontrol.invalid">Mobile Number Should Be Filled</span>
+        </div>
+      </div>
+        <div class="form-group row">
+          <label for="exampleInputuseraddress" class="col-sm-1 col-form-label">Address</label>
+          <div class="col-7">
+          <input type="text" class="form-control"  aria-describedby="address" placeholder="Enter address" name="address" id="add" [(ngModel)]="address" #addcontrol="ngModel" required>
+          <span class="alert alert-danger" *ngIf="addcontrol.touched && addcontrol.invalid">Address Should Be Filled</span>
+        </div>
+      </div>
+      <div colspan="10">
+          <label for="image">Photo</label>
+
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input name="image" type="file" />
+      </div>
+      
+           <div>
+              <button type="submit" class="btn btn-success" [disabled]="empForm.invalid" value="Update"  (click)="update()">Update</button>
+           </div>
+</form>    
+</body>
+  </html>
+  
